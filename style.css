@@ -1,7 +1,161 @@
 body {
   background: #424242;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
 }
 
 .head {
-  background-image: url("assets/sw-header.jpg")
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url("assets/sw-header.jpg");
+  height: 475px;
+}
+
+.head h1 {
+  margin-left: 5%;
+  font-size: 48px;
+  color: #F9D203
+}
+
+.container {
+  margin-top: -3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.box {
+  width: 30%;
+  background-color: lightgray;
+  height: 650px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.box h2 {
+  margin-top: 0px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  font-size: 34px;
+  color: #F9D203;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-bottom: 0px;
+}
+
+.charactersBoxOne{
+  background-color:#535556;
+  margin-bottom: 0px;
+}
+
+.charactersBoxTwo{
+  background-color: #748687;
+}
+
+.charBox {
+  height: 40px;
+}
+
+h3{
+  margin-top: 0px;
+  margin-left: 15px;
+  font-size: 24px;
+  color: #ffffff;
+  font-family:"Roboto", "Times New Roman";
+}
+
+.charTwo h3{
+  color: #535556;
+}
+.charFour h3{
+  color: #535556;
+}
+.charSix h3{
+  color: #535556;
+}
+
+.charOne{
+  background-color:#8E8E8E;
+}
+.charTwo{
+  background-color:#E1DEDE;
+}
+.charThree{
+  background-color:#444444;
+}
+.charFour{
+  background-color:#E1DEDE;
+}
+.charFive{
+  background-color:#8E8E8E;
+}
+.charSix{
+  background-color:#E1DEDE;
+}
+
+.arrowLeft{
+  border-color: transparent black;
+	border-style: solid;
+	border-width: 20px 20px 20px 0px;
+	height: 0px;
+	width: 0px;
+
+}
+
+ .arrows{
+   display:flex;
+   justify-content: center;
+   justify-content: space-evenly;
+   align-items: flex-end;
+   height: 300px;
+ }
+ .pageNumber{
+   font-size: 30px;
+ }
+
+ .arrowRight{
+  border-color: transparent black;
+	border-style: solid;
+	border-width: 20px 0px 20px 20px;
+	height: 0px;
+	width: 0px;
+
+ }
+
+.details {
+  background-color: #8E8E8E;
+}
+
+.character {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #C4C4C4;
+  height: 45%;
+}
+
+.character h2 {
+  margin-left: 5%;
+  font-size: 16px;
+  color: #0C0C0C;
+  font-family: "Roboto", "Times New Roman";
+}
+
+.planet {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #8E8E8E;
+}
+
+.planet div {
+  margin-top: 5%;
+  margin-left: 5%;
+  font-size: 16px;
+  color: #ffffff;
+  font-family: "Roboto", "Times New Roman";
 }

@@ -4,7 +4,7 @@
 <head>
 
     <!-- Titel på hemsidan -->
-    <title>Star wars catalog</title>
+    <title>Star wars katalog</title>
 
     <!-- Övrig nödvändig kod -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,37 +19,53 @@
 <body>
 
     <header class="head"> 
-      <h1>STAR WARS CATALOG</h1>
+      <h1>STAR WARS</h1>
+      <h1>CATALOG</h1>
     </header>
 
     <main class="container">
-        <section class="characters">
-          <h2>Characters</h2>
-          <div class="charOne"></div>
-          <div class="charTwo"></div>
-          <div class="charThree"></div>
-          <div class="charFour"></div>
-          <div class="charFive"></div>
-          <div class="charSix"></div>
+        <section class="characters box">
+          <h2 class="charactersBoxOne">Characters</h2>
+          <div class="charBox charOne"><h3>Luke Skywalker</h3></div>
+          <div class="charBox charTwo"><h3>Luke Skywalker</h3></div>
+          <div class="charBox charThree"><h3>Luke Skywalker</h3></div>
+          <div class="charBox charFour"><h3>Luke Skywalker</h3></div>
+          <div class="charBox charFive"><h3>Luke Skywalker</h3></div>
+          <div class="charBox charSix"><h3>Luke Skywalker</h3></div>
 
           <div class="arrows">
             <div class="arrowLeft"></div>
-            <div class="pageNumber"></div>
+            <div class="pageNumber">1/8</div>
             <div class="arrowRight"></div>
           </div>
-
         </section>
 
-        <section class="details">
-          <h2>Details</h2>
-          <div class="character"></div>
-          <div class="planet"></div>
-
+        <section class="details box">
+          <h2 class="charactersBoxTwo">Details</h2>
+          <div class="character">
+            <div class="fullName">FirstName LastName</div>
+            <div class="height">Height: </div>
+            <div class="mass">Mass: </div>
+            <div class="hairColor">Hair color: </div>
+            <div class="skinColor">Skin color: </div>
+            <div class="eyeColor">Eye color: </div>
+            <div class="birthYear">Birth year: </div>
+            <div class="gender">Gender: </div>
+          </div>
+          <div class="planet">
+            <h4 class="planetName">Planet name</h4>
+            <h4 class="rotationPeriod">Rotation period: </h4>
+            <h4 class="orbitalPeriod">Orbital period: </h4>
+            <h4 class="diameter">Diameter: </h4>
+            <h4 class="climate">Climate: </h4>
+            <h4 class="gravity">Gravity: </h4>
+            <h4 class="terrain">Terrain: </h4>
+          </div>
         </section>
         
     </main>
 
 <script src="fetch.js"></script>
-<script type="text/javascript" src="userCards.js"></script>
+<script type="text/javascript" src="writtingScript.js"></script>
 
 </body>
