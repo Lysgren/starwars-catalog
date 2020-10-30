@@ -2,20 +2,20 @@
 
 let desiredData = "https://swapi.dev/api/people/"
 
-async function getData (requestedData) {
+let getData = async requestedData => {
   let request = await fetch(requestedData)
   let data  = await request.json()
   return data
 }
 
-function createDetails(item) {
+let createDetails = item => {
   let details = document.querySelector("div.character")
   let data = document.createElement("div");
   data.innerHTML = item
   details.append(data)
 }
 
-function writeCharacter(character) {
+let writeCharacter = character => {
   let nameList = document.querySelector(".characters-names")
   let btn = document.createElement("button");
   btn.innerHTML = character.name
@@ -25,7 +25,7 @@ function writeCharacter(character) {
   btn.addEventListener("click", function() {
     document.querySelector("div.character").innerHTML = ""
     createDetails(character.name)
-    createDetails("Height: " + character.height)
+    createDetails("Height: " + character.height + " cm")
     createDetails("Mass: " + character.mass + " kg")
     createDetails("Hair colour: " + character.hair_color)
     createDetails("Skin colour: " + character.skin_color)
@@ -36,7 +36,7 @@ function writeCharacter(character) {
 
 }
 
-async function renderCharacterList (currentPage) {
+let renderCharacterList = async currentPage => {
   document.querySelector(".characters-names").innerHTML = ""
   document.querySelector(".page-number").innerHTML = currentPage + "/8"
 
@@ -46,7 +46,7 @@ async function renderCharacterList (currentPage) {
   }
 }
 
-async function main() {
+let main = async () => {
   let currentPage = 1
 
   document.querySelector("button.arrowLeft").addEventListener("click", function() {
