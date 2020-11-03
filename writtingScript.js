@@ -1,7 +1,5 @@
 "use strict";
 
-let desiredData = "https://swapi.dev/api/people/"
-
 let getData = async requestedData => {
   let request = await fetch(requestedData)
   let data  = await request.json()
@@ -15,10 +13,13 @@ let writeDataInDOM = (position, item) => {
 }
 
 let writePlanet = async (planet) => {
-  let planetDOM = document.querySelector("div.planet")
+  let planetDOM = document.querySelector("div.planet > div.planet-content")
   planetDOM.innerHTML = ""
 
+  document.querySelector("div.planet > div.loading").classList.toggle("hide")
   let planetData = await getData(planet)
+  document.querySelector("div.planet > div.loading").classList.toggle("hide")
+
   writeDataInDOM(planetDOM, "Planet name: " + planetData.name)
   writeDataInDOM(planetDOM, "Rotation period: " + planetData.rotation_period)
   writeDataInDOM(planetDOM, "Orbital period: " + planetData.orbital_period)
@@ -29,8 +30,11 @@ let writePlanet = async (planet) => {
 }
 
 let writeCharacter = character => {
-  let detailsDOM = document.querySelector("div.character")
+  let detailsDOM = document.querySelector("div.character > div.character-content")
   detailsDOM.innerHTML = ""
+
+  document.querySelector("div.character > div.loading").classList.toggle("hide");
+  document.querySelector("div.character > div.loading").classList.toggle("hide");
 
   writeDataInDOM(detailsDOM, character.name)
   writeDataInDOM(detailsDOM, "Height: " + character.height + " cm")
@@ -40,24 +44,27 @@ let writeCharacter = character => {
   writeDataInDOM(detailsDOM, "Eye colour: " + character.eye_color)
   writeDataInDOM(detailsDOM, "Birth year: " + character.birth_year)
   writeDataInDOM(detailsDOM, "Gender " + character.gender)
-  
-  writePlanet(character.homeworld)
 }
 
 let renderCharacterList = async currentPage => {
-  document.querySelector(".characters-names").innerHTML = ""
+  let charactersDOM = document.querySelector("div.characters-names > div.characters-names-content")
+  charactersDOM.innerHTML = ""
+
   document.querySelector(".page-number").innerHTML = currentPage + "/9"
 
+  document.querySelector("div.characters-names > div.loading").classList.toggle("hide");
   let data = await getData("https://swapi.dev/api/people/?page=" + currentPage)
+  document.querySelector("div.characters-names > div.loading").classList.toggle("hide");
+
   for (let i = 0; i < data.results.length; i++) {
-    let nameList = document.querySelector(".characters-names")
     let btn = document.createElement("button");
     btn.innerHTML = data.results[i].name
     btn.classList.add("char-box");
-    nameList.append(btn)
+    charactersDOM.append(btn)
   
     btn.addEventListener("click", function() {
       writeCharacter(data.results[i])
+      writePlanet(data.results[i].homeworld)
     });
   }
 }
