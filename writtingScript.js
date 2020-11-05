@@ -69,7 +69,7 @@ let renderCharacterList = async currentPage => {
   }
 }
 
-let main = async () => {
+let main = () => {
   let currentPage = 1
 
   document.querySelector("button.arrowLeft").addEventListener("click", function() {
